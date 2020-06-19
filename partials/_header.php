@@ -3,6 +3,13 @@
 $signup = true;
 $login = false;
 
+session_start();
+error_reporting(0);
+if($_SESSION['login'] == true){
+  $signup = false;
+  $login = true;
+}
+
 echo '<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="#">iCoders</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

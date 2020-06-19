@@ -11,8 +11,9 @@ echo '
         </button>
       </div>
       <div class="modal-body">
-        <p>Are You Sure To Logout Form iCoders ?</p>
-        <a href="logout.php" class="btn btn-danger ml-2" role="button" aria-pressed="true">LogOut</a>      
+        <h3>Are you really want to logout form iCoders ?</h3>
+        <a href="logout.php" class="btn btn-danger my-3" role="button" aria-pressed="true">Yes Sure</a>      
+        <a href="index.php" class="btn btn-outline-success ml-2 my-3" role="button" aria-pressed="true">Cancle</a>      
       </div>
     </div>
   </div>

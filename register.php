@@ -17,8 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     if($num == 0){
         if($pass == $cpass){
-            $pass_hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO `users066247` (`name`, `username`, `email`, `password`, `dt`) VALUES ('$name', '$username', '$email', '$pass', current_timestamp())";
+            $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO `users066247` (`name`, `username`, `email`, `password`, `dt`) VALUES ('$name', '$username', '$email', '$pass_hash', current_timestamp())";
             $result = mysqli_query($conn, $sql);
 
             if($result){
@@ -51,8 +51,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 <body>
     <?php
+    include "partials/_header.php";
     if($success){
-        echo '<div class="alert alert-Success alert-dismissible fade show" role="alert">
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success</strong>'.$success.'
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -67,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         </button>
       </div>';
     }
-?>
+    ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
