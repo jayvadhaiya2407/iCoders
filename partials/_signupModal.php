@@ -11,7 +11,31 @@ echo '
         </button>
       </div>
       <div class="modal-body">
-        ...
+      <div class="container my-4">
+      <form action="signup.php" method="POST">
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" require>
+      </div>
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" require>
+      </div>
+      <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" require>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" require>
+      </div>
+      <div class="form-group">
+          <label for="cpassword">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" name="cpassword" require>
+      </div>
+      <button type="submit" class="btn btn-primary">SignUp</button>
+      </form>
+  </div>
       </div>
     </div>
   </div>

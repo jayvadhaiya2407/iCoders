@@ -11,7 +11,21 @@ echo '
         </button>
       </div>
       <div class="modal-body">
-        ...
+      <div class="container my-4">
+      
+      <form action="login.php" method="POST">
+      <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" require>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" require>
+      </div>
+      <button type="submit" class="btn btn-primary">LogIn</button>
+      </form>
+  </div>
+  
       </div>
     </div>
   </div>
