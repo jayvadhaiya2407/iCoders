@@ -12,7 +12,7 @@ echo '
       </div>
       <div class="modal-body">
       <div class="container my-4">
-      <form action="signup.php" method="POST">
+      <form action="register.php" method="POST">
       <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" name="name" require>
@@ -33,7 +33,7 @@ echo '
           <label for="cpassword">Confirm Password</label>
           <input type="password" class="form-control" id="cpassword" name="cpassword" require>
       </div>
-      <button type="submit" class="btn btn-primary">SignUp</button>
+      <input type="submit" value="Submit" class="btn btn-danger">
       </form>
   </div>
       </div>

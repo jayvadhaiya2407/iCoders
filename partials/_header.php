@@ -39,19 +39,19 @@ echo '<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 
   if($signup){
   echo '
-  <a href="#" class="btn btn-outline-light ml-2" role="button" aria-pressed="true" data-toggle="modal" data-target="#loginModal">LogIn</a>
-  <a href="#" class="btn btn-outline-warning ml-2" role="button" aria-pressed="true" data-toggle="modal" data-target="#signupModal">Register</a>';
+  <button class="btn btn-outline-light ml-2" role="button" aria-pressed="true" data-toggle="modal" data-target="#loginModal">LogIn</button>
+  <button class="btn btn-outline-warning ml-2" role="button" aria-pressed="true" data-toggle="modal" data-target="#signupModal">Register</buton>';
   }
 
   if($login){
   echo '
-  <a href="#" class="btn btn-danger ml-2" role="button" aria-pressed="true">LogOut</a>';
+  <button class="btn btn-danger ml-2" role="button" aria-pressed="true" data-toggle="modal" data-target="#logoutModal">LogOut</button>';
   }
 
   echo '
 </div>
 </nav>';
 ?>
-
 <?php include "partials/_signupModal.php"; ?>
 <?php include "partials/_loginModal.php"; ?>
+<?php include "partials/_logoutModal.php"; ?>

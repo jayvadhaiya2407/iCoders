@@ -22,7 +22,7 @@ echo '
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" require>
       </div>
-      <button type="submit" class="btn btn-primary">LogIn</button>
+      <input type="submit" value="Submit" class="btn btn-danger">
       </form>
   </div>
   
