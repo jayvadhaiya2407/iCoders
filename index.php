@@ -14,12 +14,21 @@ require "partials/_dbconnect.php";
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="custom.css" type="text/css">
     <title>Welcome -iSolutios Forum</title>
 </head>
 
 <body>
     <?php include "partials/_header.php"?>
+    <div class="main img-fluit">
+        <div class="btn-align">
+            <h5 class="text">Welcome</h5>
+            <h1 class="text">iCoders -The Coding Forum</h1>
+            <h6 class="text">Let's Crack The Error</h6>
+            <button class="btn btn-md btn-outline-light my-3">Begin Now</button>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
