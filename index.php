@@ -51,7 +51,7 @@ require "partials/_dbconnect.php";
                             <p class="card-text">'. substr($desc, 0, 255).'.....</p>
                         </div>
                         <div>
-                            <button class="btn btn-outline-success btn-md ml-4 my-3">View Threads</button>
+                        
                         </div>
                     </div>
                 </div>';
@@ -60,6 +60,10 @@ require "partials/_dbconnect.php";
             </div>
         </div>
     </div>
+
+    <?php
+        include "partials/_footer.php";
+    ?>
 
 
     <!-- Optional JavaScript -->
