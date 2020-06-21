@@ -25,9 +25,42 @@ require "partials/_dbconnect.php";
             <h5 class="text">Welcome</h5>
             <h1 class="text">iCoders -The Coding Forum</h1>
             <h6 class="text">Let's Crack The Error</h6>
-            <button class="btn btn-md btn-outline-light my-3">Begin Now</button>
+            <a href="#categories" class="btn btn-outline-light btn-md" role="button" aria-pressed="true">Begin Now</a>
         </div>
     </div>
+
+    <div class="main-container" style="background-color: #e9ecef;">
+        <h1 class="text-center py-4" id="categories">Categories</h1>
+        <div class="container">
+            <div class="row">
+
+                <?php
+                    $sql = "SELECT * FROM `categories`";
+                    $result = mysqli_query($conn, $sql);
+
+                    while($row = mysqli_fetch_assoc($result)){
+                        $cid = $row['category_id'];
+                        $cat = $row['category_nme'];
+                        $desc = $row['category_desc'];
+
+                        echo '<div class="col-md-4 my-2">
+                        <div class="card mb-4 shadow-sm">
+                             <img src="images/card-'.$cid.'.png" alt="img" style="margin:  20px auto; width:200px; height:200px" class="img-fluid">
+                        <div class="card-body">
+                            <h4>'.$cat.'</h4>
+                            <p class="card-text">'. substr($desc, 0, 255).'.....</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-success btn-md ml-4 my-3">View Threads</button>
+                        </div>
+                    </div>
+                </div>';
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
