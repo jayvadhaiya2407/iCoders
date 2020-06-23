@@ -28,6 +28,7 @@ echo '
       <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" require>
+          <p>--> Don\'t Use < and > In Your Password.</p>
       </div>
       <div class="form-group">
           <label for="cpassword">Confirm Password</label>

@@ -1,5 +1,5 @@
 <?php
-
+require "partials/_dbconnect.php";
 $signup = true;
 $login = false;
 
@@ -28,19 +28,24 @@ echo '<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Programming</a>
-        <a class="dropdown-item" href="#">Gaming</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Smart Devices</a>
-      </div>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+        
+      $sql = "SELECT category_id,category_name FROM categories";
+      $result = mysqli_query($conn, $sql);
+
+      while($row = mysqli_fetch_assoc($result)){
+        echo '<a class="dropdown-item" href="threadlist.php?catid='.$row['category_id'].'">'.$row['category_name'].'</a>';
+      }
+
+
+      echo '</div>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Contact</a>
     </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <form class="form-inline my-2 my-lg-0" action="search.php">
+    <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
     <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button> --->
   </form>';
 

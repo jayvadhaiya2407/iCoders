@@ -11,6 +11,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $pass = $_POST['password'];
     $cpass = $_POST['cpassword'];
 
+    $name = str_replace("<","&lt;","$name");
+    $name = str_replace(">","&gt;","$name");
+
+    $username = str_replace("<","&lt;","$username");
+    $username = str_replace(">","&gt;","$username");
+
+    $pass = str_replace("<","&lt;","$pass");
+    $pass = str_replace(">","&gt;","$pass");
+
     $sql = "SELECT * FROM users066247 WHERE username='$username' AND email='$email'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);

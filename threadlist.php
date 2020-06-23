@@ -9,14 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <title>ThreadList -iCoders</title>
 </head>
 
 <body>
     <?php 
-        include "partials/_header.php";
         require "partials/_dbconnect.php";
+        include "partials/_header.php";
         // session_start();
     ?>
 
@@ -50,6 +50,12 @@
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $thread_title = $_POST['title'];
             $thread_desc = $_POST['thread_desc'];
+
+            $thread_title = str_replace("<","&lt;","$thread_title");
+            $thread_title = str_replace(">","&gt;","$thread_title");
+            $thread_desc = str_replace("<","&lt;","$thread_desc");
+            $thread_desc = str_replace(">","&gt;","$thread_desc");
+
             $thread_cat_id = $cat_id;
             $user_id = $_SESSION['user_id'];
 
@@ -74,9 +80,9 @@
 
         }
     ?>
+    </div>
 
     <?php
-
     if(isset($_SESSION['login']) && $_SESSION['login']==true){
         echo '<h2 class="text-center">Ask A Question</h2>
         <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
@@ -101,10 +107,10 @@
     }
     ?>
 
-    <div class="container" style="min-height: 700px">
-        <h2 class="text-center py-3">Questions/Threads</h2>
+        <div class="container" style="min-height: 700px">
+            <h2 class="text-center py-3">Questions/Threads</h2>
 
-        <?php
+            <?php
             $thread_cat_id = $cat_id;
             $sql = "SELECT * FROM threads WHERE thread_cat_id='$thread_cat_id'";
             $result = mysqli_query($conn, $sql);
@@ -125,7 +131,7 @@
                 echo '<div class="media my-4 border rounded-lg py-3 px-3">
                 <img src="images/user.png" class="mr-3 img-fluid" alt="userlogo" style="width:33px; height:33px">
                 <div class="media-body">
-                    <h5 class="mt-0">'.$thread_title.'</h5>(Post By :- <b>'.$username.'</b>)
+                    <h5 class="mt-0">'.$thread_title.'</h5>(Posted By :- <b>'.$username.'</b>)
                     <p>'.$thread_desc.'</P>
                     <p class="my-2"><a href="thread_diss.php?threadid='.$thread_id.'">Discuss</a></p>
                 </div>
@@ -141,23 +147,21 @@
               </div>';
             }
         ?>
-    </div>
+        </div>
 
-    <?php
-    include "partials/_footer.php";
-?>
+        <?php include "partials/_footer.php"?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
