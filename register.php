@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <?php
     include "partials/_header.php";
     if($success){
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 55px;">
         <strong>Success</strong>'.$success.'
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       </div>';
     }
     if($error){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 55px;">
         <strong>Failed!</strong>' .$error. '
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -69,6 +69,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       </div>';
     }
     ?>
+
+    <div class="container text-center">
+        <img src="images/logo.png" alt="logo" class="img-fluid" style="padding-top: 10%;">
+        <b><p>Welcome To iCoders. Click <a href="index.php">Here</a> To Begin.</p></b>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

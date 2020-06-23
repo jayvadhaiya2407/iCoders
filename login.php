@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             session_start();
             $_SESSION['login'] = true;
             $_SESSION['username'] = $row["username"];
+            $_SESSION['user_id'] = $row["srno"];
             header("location: index.php");
         }else{
             $error = "Invalid Password.";
@@ -61,6 +62,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //   echo var_dump(password_hash($pass, PASSWORD_DEFAULT));
     }
 ?>
+
+    <div class="container text-center">
+        <img src="images/logo.png" alt="logo" class="img-fluid" style="padding-top: 10%;">
+        <b>
+            <p>Go For Login or Signup. Click <a href="index.php">Here</a> To Begin.</p>
+        </b>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

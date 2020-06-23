@@ -40,7 +40,7 @@ require "partials/_dbconnect.php";
 
                     while($row = mysqli_fetch_assoc($result)){
                         $cid = $row['category_id'];
-                        $cat = $row['category_nme'];
+                        $cat = $row['category_name'];
                         $desc = $row['category_desc'];
 
                         echo '<div class="col-md-4 my-2">
@@ -51,7 +51,7 @@ require "partials/_dbconnect.php";
                             <p class="card-text">'. substr($desc, 0, 255).'.....</p>
                         </div>
                         <div>
-                        
+                            <a href="threadlist.php?catid='.$cid.'" class="btn btn-outline-success btn-md ml-3 my-4" role="button" aria-pressed="true">View Threads</a>
                         </div>
                     </div>
                 </div>';

@@ -4,8 +4,8 @@ $signup = true;
 $login = false;
 
 session_start();
-error_reporting(0);
-if($_SESSION['login'] == true){
+//error_reporting(0);
+if(isset(($_SESSION['login'])) && $_SESSION['login'] == true){
   $signup = false;
   $login = true;
 }
