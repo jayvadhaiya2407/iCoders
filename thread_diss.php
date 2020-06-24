@@ -95,7 +95,8 @@ require "partials/_dbconnect.php";
 
         <?php
             $thread_id = $_GET['threadid'];
-            $sql = "SELECT * FROM replies WHERE thread_id='$thread_id'";
+            // $sql = "SELECT * FROM replies WHERE thread_id='$thread_id'";
+            $sql = "SELECT * FROM replies WHERE thread_id='$thread_id' ORDER BY reply_id DESC LIMIT 10";
             $result = mysqli_query($conn, $sql);
             $noResult = true;
             while($row = mysqli_fetch_assoc($result)){

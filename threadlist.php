@@ -80,7 +80,6 @@
 
         }
     ?>
-    </div>
 
     <?php
     if(isset($_SESSION['login']) && $_SESSION['login']==true){
@@ -106,13 +105,15 @@
               </div>';
     }
     ?>
+</div>
 
         <div class="container" style="min-height: 700px">
             <h2 class="text-center py-3">Questions/Threads</h2>
 
             <?php
             $thread_cat_id = $cat_id;
-            $sql = "SELECT * FROM threads WHERE thread_cat_id='$thread_cat_id'";
+            // $sql = "SELECT * FROM threads WHERE thread_cat_id='$thread_cat_id'";
+            $sql = "SELECT * FROM threads WHERE thread_cat_id='$thread_cat_id' ORDER BY thread_id DESC LIMIT 10";
             $result = mysqli_query($conn, $sql);
             $noResult = true;
             while($row = mysqli_fetch_assoc($result)){

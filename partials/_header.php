@@ -22,7 +22,7 @@ echo '<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="about.php">About</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +41,7 @@ echo '<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       echo '</div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
+      <a class="nav-link" href="contact.php">Contact</a>
     </li>
   </ul>
   <form class="form-inline my-2 my-lg-0" action="search.php">
