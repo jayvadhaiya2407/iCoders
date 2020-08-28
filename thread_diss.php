@@ -89,6 +89,7 @@ require "partials/_dbconnect.php";
               </div>';
     }
     ?>
+    </div>
 
     <div class="container" style="min-height: 700px">
         <h2 class="text-center py-3">Replies</h2>
